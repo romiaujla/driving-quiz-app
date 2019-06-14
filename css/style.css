@@ -9,3 +9,29 @@ a, div, section, ul, li{
     padding: 0;
 }
 
+li{
+    list-style: none;
+}
+
+/* Vertically Center Aligning the Main Container which 
+will hold all the pages for the app  */
+html, body{
+    height: 100%;
+}
+
+.container{
+    margin:auto;
+    width:90%;
+    height: 95%;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* Tablets and Other Large Screens */
+@media only screen and (min-width: 768px){
+
+}
