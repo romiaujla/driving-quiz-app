@@ -27,7 +27,7 @@ const QUESTIONS = [
             "Pass if it is safe to do so",
             "Traffic on the other side of the road can pass"
         ],
-        answer: "Pass if it is safe to do so",
+        answer: "Pass if it is safe to do so", // Change to index
         answerInfo: "A broken yellow line means that it is legal for you to pass, as long as traffic is clear and it is safe for you to do so. The solid yellow line on the other side means that traffic coming the other way cannot pass.",
         imgSrc: "img/question-1.jpg"
     },
