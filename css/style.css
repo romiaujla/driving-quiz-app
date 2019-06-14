@@ -13,6 +13,19 @@ li{
     list-style: none;
 }
 
+.app-button{
+    border: 1px solid black;
+    background: silver;
+    padding: 10px;
+    font-size: 0.8em;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.app-button:hover{
+    background: gray;
+}
+
 /* Vertically Center Aligning the Main Container which 
 will hold all the pages for the app  */
 html, body{
@@ -30,7 +43,31 @@ html, body{
     text-align: center;
 }
 
+/* Style for the home page */
+.quiz-intro-page{
+    border: 2px solid black;
+    padding: 20px;
+}
 
+.heading{
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.instructions{
+    text-align: left;
+}
+.instruction-title{
+    margin-bottom: 10px;
+}
+.instruction-list li::before{
+    content: '- ';
+}
+.instruction-list{
+    margin-bottom: 20px;
+}
 /* Tablets and Other Large Screens */
 @media only screen and (min-width: 768px){
 
