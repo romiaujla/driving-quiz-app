@@ -96,5 +96,13 @@ const STORE = {
             }
         }
     ],
-    score: 0
+    score: 0,
+    resultCaptions: {
+        0: "Wow!! Did you do that on purpose, Come on give it a real try this time.",
+        1: "Well!! That was not a good result, Want to see if you can do better, why not try again",
+        2: "You do need to practice more question, Want to try again?",
+        3: "You could've done better, Why Not Give it Another try!!",
+        4: "Ohh Great!! You almost got them all correct, Try to ace it this time, Want to try again?",
+        5: "Wow!! That is a perfect score, can you do that again?"
+    }
 };
