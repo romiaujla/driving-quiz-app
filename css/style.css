@@ -44,15 +44,18 @@ html, body{
     text-align: center;
 }
 
-/* Style for the home page */
-.quiz-intro-page{
-    display: none;
-}
-.quiz-intro-page, .quiz-question-page{
+.quiz-intro-page, 
+.quiz-question-page, 
+.quiz-answer-page,
+.quiz-result-page{
     border: 2px solid black;
     padding: 20px;
 }
 
+/* Style for the home page */
+.quiz-intro-page{
+    display: none;
+}
 .heading{
     border-bottom: 2px solid black;
     padding-bottom: 20px;
@@ -74,6 +77,9 @@ html, body{
 }
 
 /* Styling Question Page */
+.quiz-question-page{
+    display: none;
+}
 .question-page-header{
     display: flex;
     flex-direction: row;
@@ -106,6 +112,21 @@ html, body{
     margin-top: 20px;
 }
 
+/* Quiz Answer Page Styling */
+/* .quiz-answer-page{
+    display: none;
+} */
+.answer-heading{
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+.quiz-answer-page .question-image{
+    margin-top: 20px;
+}
+.answer{
+    padding: 10px 0px;
+}
 /* When the viewport goes more than 600px
 the question image will not increase its width 
 more than 500px, which will avoid the top of the 
