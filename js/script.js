@@ -3,6 +3,11 @@
 // Global Variables
 const totalQuestions = STORE.questions.length;
 
+function resetAllVariables(){
+    STORE.score = 0;
+    STORE.questionNumber = 0;
+}
+
 // This function will handle the click on the Retry Quiz Button on the result page. If the user chooses to Retake the Quiz, he will be taken to the first page where the application begins.
 function handleRestartingQuiz() {
 
@@ -10,10 +15,10 @@ function handleRestartingQuiz() {
     $('.quiz-result-page').on('click', '.retry-quiz', function (e) {
 
         console.log(`Retry Quiz Button Clicked`);
+
+        // Hide current page and then callback the function to reset score and questionNumber and then load the quiz-into-page.
         $('.quiz-result-page').fadeOut(200);
-
-        
-
+        resetAllVariables();
         $('.quiz-intro-page').delay(250).fadeIn(200);
 
     });
