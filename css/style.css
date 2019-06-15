@@ -53,9 +53,6 @@ html, body{
 }
 
 /* Style for the home page */
-.quiz-intro-page{
-    display: none;
-}
 .heading{
     border-bottom: 2px solid black;
     padding-bottom: 20px;
@@ -78,7 +75,7 @@ html, body{
 
 /* Styling Question Page */
 .quiz-question-page{
-    /* display: none; */
+    display: none;
 }
 .question-page-header{
     display: flex;
