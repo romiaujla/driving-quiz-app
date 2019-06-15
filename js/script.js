@@ -30,8 +30,15 @@ function handleContinuationOfTheQuiz() {
     $('.quiz-answer-page').on('click', '.continue-button', function (e) {
 
         console.log(`Continue button clicked`);
-        $('.quiz-answer-page').hide();
-        $('.quiz-result-page').show();
+        
+        $('.quiz-answer-page').fadeOut(200);
+        let qNum = ++STORE.questionNumber;
+        if(qNum < STORE.questions.length){
+            renderQuestionPage();
+            $('.quiz-question-page').delay(250).fadeIn(200);
+        }else{
+            $('.quiz-result-page').delay(250).fadeIn(200);
+        }
 
     });
 
@@ -52,12 +59,18 @@ function getAnswerPageText(result, qNum)
             <button class="continue-button app-button">Continue</button>`;
 }
 
+// This function will check if the users selected answer is correct or not.
+function checkAnswer(){
+    return true;
+}
+
 // Will Render the Page depending on the result of the user whether it is correct or not
 function renderAsnwerPage(){
-    let correctAnswer = true;
+    let correctAnswer = checkAnswer();
     let result = "";
     if(correctAnswer){
         result = "correct"
+        STORE.score++;
     }else{
         result = "incorrect"
     }
@@ -107,19 +120,19 @@ function getQuestionText(qNum) {
                             <img src="${STORE.questions[qNum].img.src}" alt="${STORE.questions[qNum].img.alt}">
                         </div>
                         <label for="option-a" class="option" id="a">
-                        <input type="radio" name="answer-option" id="option-a" value="${STORE.questions[qNum].options[0]}" required>
+                        <input type="radio" name="answer-option" id="option-a" value="0" required>
                         <span class="option-text">${STORE.questions[qNum].options[0]}</span>
                         </label>
                         <label for="option-b" class="option" id="b">
-                        <input type="radio" name="answer-option" id="option-b" value="${STORE.questions[qNum].options[1]}" required>
+                        <input type="radio" name="answer-option" id="option-b" value="1" required>
                         <span class="option-text">${STORE.questions[qNum].options[1]}</span>
                         </label>
                         <label for="option-c" class="option" id="c">
-                        <input type="radio" name="answer-option" id="option-c" value="${STORE.questions[qNum].options[2]}" required>
+                        <input type="radio" name="answer-option" id="option-c" value="2" required>
                         <span class="option-text">${STORE.questions[qNum].options[2]}</span>
                         </label>
                         <label for="option-d" class="option" id="d">
-                        <input type="radio" name="answer-option" id="option-d" value="${STORE.questions[qNum].options[3]}" required>
+                        <input type="radio" name="answer-option" id="option-d" value="3" required>
                         <span class="option-text">${STORE.questions[qNum].options[3]}</span>
                         </label>
                         <button type="submit" class="submit-answer app-button">Submit Answer</button>

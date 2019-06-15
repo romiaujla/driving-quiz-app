@@ -105,5 +105,5 @@ const STORE = {
         3: "You could've done better, Why Not Give it Another try!!",
         4: "Ohh Great!! You almost got them all correct, Try to ace it this time, Want to try again?",
         5: "Wow!! That is a perfect score, can you do that again?"
-    }
+    },
 };
