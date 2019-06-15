@@ -37,6 +37,33 @@ function handleContinuationOfTheQuiz() {
 
 }
 
+// Return the HTML of the 
+function getAnswerPageText(result, qNum)
+{
+    return `<h2 class="answer-heading ${result}">
+                ${result} Answer
+            </h2>
+            <div class="question-image ${result}">
+                <img src="${STORE.questions[qNum].img.src}" alt="${STORE.questions[qNum].img.alt}">
+            </div>
+            <div class="answer ${result}">
+                    ${STORE.questions[qNum].answerInfo}
+            </div>
+            <button class="continue-button app-button">Continue</button>`;
+}
+
+// Will Render the Page depending on the result of the user whether it is correct or not
+function renderAsnwerPage(){
+    let correctAnswer = true;
+    let result = "";
+    if(correctAnswer){
+        result = "correct"
+    }else{
+        result = "incorrect"
+    }
+    const answerHTML = getAnswerPageText(result, getQuestionNumber())
+    $('.quiz-answer-page').html(answerHTML);
+}
 
 // This function handles the button click on Submit Answer on the question page and takes the user to the answer page and increments the 'score' if the answer is correct 
 function handleSubmitAnswer() {
@@ -49,8 +76,10 @@ function handleSubmitAnswer() {
         // Prevent the page from refreshing automatically as it is a form button
         e.preventDefault();
 
-        $('.quiz-question-page').hide();
-        $('.quiz-answer-page').show();
+        // Hide the current Page and then calls the renderAsnwerPage to make the page ready for the answer and fadeIn in the answer page.
+        $('.quiz-question-page').fadeOut(200);
+        renderAsnwerPage();
+        $('.quiz-answer-page').delay(250).fadeIn(200);
 
     });
 
