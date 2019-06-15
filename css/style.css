@@ -4,7 +4,8 @@
 }
 
 body, p, h1, h2, h3, h4, h5, h6, 
-a, div, section, ul, li{
+a, div, section, ul, li, label, input, fieldset, 
+form{
     margin: 0;
     padding: 0;
 }
@@ -35,7 +36,7 @@ html, body{
 .container{
     margin:auto;
     width:90%;
-    height: 95%;
+    height: 100%;
     min-height: 700px;
     display: flex;
     align-items: center;
@@ -44,6 +45,9 @@ html, body{
 }
 
 /* Style for the home page */
+.quiz-intro-page{
+    display: none;
+}
 .quiz-intro-page, .quiz-question-page{
     border: 2px solid black;
     padding: 20px;
@@ -68,7 +72,51 @@ html, body{
 .instruction-list{
     margin-bottom: 20px;
 }
+
+/* Styling Question Page */
+.question-page-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+.question{
+    padding: 10px;
+}
+.question-image img{
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+.options fieldset{
+    border: none;
+}
+.option{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+.option input{
+    margin-right: 10px;
+}
+.submit-answer{
+    margin-top: 20px;
+}
+
+/* When the viewport goes more than 600px
+the question image will not increase its width 
+more than 500px, which will avoid the top of the 
+question to get stuck outside the viewport */
+@media only screen and (min-width: 600px){
+    .question-image img{
+        max-width: 500px;
+    }
+}
+
 /* Tablets and Other Large Screens */
 @media only screen and (min-width: 768px){
-
+    
 }
