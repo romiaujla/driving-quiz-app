@@ -1,5 +1,8 @@
 'use strict';
 
+// Global Variables
+const totalQuestions = STORE.questions.length;
+
 // This function will handle the click on the Retry Quiz Button on the result page. If the user chooses to Retake the Quiz, he will be taken to the first page where the application begins.
 function handleRestartingQuiz() {
 
@@ -7,20 +10,31 @@ function handleRestartingQuiz() {
     $('.quiz-result-page').on('click', '.retry-quiz', function (e) {
 
         console.log(`Retry Quiz Button Clicked`);
-        $('.quiz-result-page').hide();
-        $('.quiz-intro-page').show();
+        $('.quiz-result-page').fadeOut(200);
+
+        
+
+        $('.quiz-intro-page').delay(250).fadeIn(200);
 
     });
 }
 
-// Returns the value of the question number in the STORE
-function getQuestionNumber(){
-    return STORE.questionNumber;
+// Get the HTML for the result page based on the users score and ask to retry the quiz based ont the uesrs result.
+function getResultPageHTML(){
+    let score = STORE.score;
+    return `<h2 class="result-header">Your Result</h2>
+            <div class="result">
+                <p class="score">Score ${score}</p>
+                <p class="total">Out of ${totalQuestions}</p>
+            </div>
+            <div class="result-caption">${STORE.resultCaptions[score]}</div>
+            <button class="retry-quiz app-button">Retry Quiz</button>`;
 }
 
-// Returns the current score of the user stored in the STORE database
-function getScore(){
-    return STORE.score;
+// Set the HTML for the result page 
+function renderResultPage(){
+    const resultHTML = getResultPageHTML();
+    $('.quiz-result-page').html(resultHTML);
 }
 
 // This function handles the functionality to continue the quiz once the user has seen the answer and proceed to the next question if quiz is completed will take the user to the result screen
@@ -32,11 +46,15 @@ function handleContinuationOfTheQuiz() {
         console.log(`Continue button clicked`);
         
         $('.quiz-answer-page').fadeOut(200);
+        // Increment the question number
         let qNum = ++STORE.questionNumber;
-        if(qNum < STORE.questions.length){
+
+        // Checks if the question number is less than the total number of the questions, if yes then render the next question else render the result page with the users score
+        if(qNum < totalQuestions){
             renderQuestionPage();
             $('.quiz-question-page').delay(250).fadeIn(200);
         }else{
+            renderResultPage();
             $('.quiz-result-page').delay(250).fadeIn(200);
         }
 
@@ -44,7 +62,7 @@ function handleContinuationOfTheQuiz() {
 
 }
 
-// Return the HTML of the 
+// Return the HTML of the answer Page
 function getAnswerPageText(result, qNum)
 {
     return `<h2 class="answer-heading ${result}">
@@ -74,7 +92,7 @@ function renderAsnwerPage(){
     }else{
         result = "incorrect"
     }
-    const answerHTML = getAnswerPageText(result, getQuestionNumber())
+    const answerHTML = getAnswerPageText(result, STORE.questionNumber);
     $('.quiz-answer-page').html(answerHTML);
 }
 
@@ -102,10 +120,10 @@ function handleSubmitAnswer() {
 function getQuestionText(qNum) {
     return `<div class="question-page-header">
                 <div class="question-num">
-                    Question ${qNum+1}/5
+                    Question ${qNum+1}/${totalQuestions}
                 </div>
                 <div class="user-score">
-                    Score ${getScore()}/${qNum}
+                    Score ${STORE.score}/${qNum}
                 </div>
             </div>
             <div class="quesiton-section">
@@ -143,7 +161,7 @@ function getQuestionText(qNum) {
 
 // This function will add the question's HTML to .quiz-question-page section
 function renderQuestionPage() {
-    const questionHTML = getQuestionText(getQuestionNumber());
+    const questionHTML = getQuestionText(STORE.questionNumber);
     $('.quiz-question-page').html(questionHTML);
 }
 
