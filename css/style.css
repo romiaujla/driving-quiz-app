@@ -5,7 +5,7 @@
 
 body, p, h1, h2, h3, h4, h5, h6, 
 a, div, section, ul, li, label, input, fieldset, 
-form{
+form,legend{
     margin: 0;
     padding: 0;
 }
@@ -78,7 +78,7 @@ html, body{
 
 /* Styling Question Page */
 .quiz-question-page{
-    display: none;
+    /* display: none; */
 }
 .question-page-header{
     display: flex;
@@ -129,9 +129,9 @@ html, body{
 }
 
 /* Quiz Result Page Styling */
-/* .quiz-result-page{
+.quiz-result-page{
     display: none;
-} */
+}
 .result-header{
     border-bottom: 2px solid black;
     text-transform: uppercase;
