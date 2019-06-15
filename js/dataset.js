@@ -97,6 +97,7 @@ const STORE = {
         }
     ],
     score: 0,
+    questionNumber: 0,
     resultCaptions: {
         0: "Wow!! Did you do that on purpose, Come on give it a real try this time.",
         1: "Well!! That was not a good result, Want to see if you can do better, why not try again",
