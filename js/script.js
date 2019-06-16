@@ -3,6 +3,19 @@
 // Global Variables
 const totalQuestions = STORE.questions.length;
 
+function getQuestionNumber(){
+    return STORE.questionNumber;
+}
+function getScore(){
+    return STORE.score;
+}
+function incrementQuestionNumber(){
+    ++STORE.questionNumber;
+}
+function incrementScore(){
+    ++STORE.score;
+}
+
 function resetAllVariables(){
     STORE.score = 0;
     STORE.questionNumber = 0;
@@ -51,8 +64,8 @@ function handleContinuationOfTheQuiz() {
         console.log(`Continue button clicked`);
         
         $('.quiz-answer-page').fadeOut(200);
-        // Increment the question number
-        let qNum = ++STORE.questionNumber;
+        incrementQuestionNumber();
+        let qNum = getQuestionNumber();
 
         // Checks if the question number is less than the total number of the questions, if yes then render the next question else render the result page with the users score
         if(qNum < totalQuestions){
@@ -82,9 +95,21 @@ function getAnswerPageText(result, qNum)
             <button class="continue-button app-button">Continue</button>`;
 }
 
+
+
 // This function will check if the users selected answer is correct or not.
 function checkAnswer(){
-    return true;
+    const userAnswer = $('input[name="answer-option"]:checked').val();
+    let qNum = getQuestionNumber();
+    const correctAnswer = STORE.questions[qNum].answer;
+
+    console.log(`${typeof userAnswer}  ${typeof correctAnswer}`);
+    if(userAnswer === correctAnswer){
+        console.log("condition met");
+        return true;
+    }
+
+    return false;
 }
 
 // Will Render the Page depending on the result of the user whether it is correct or not
@@ -93,11 +118,11 @@ function renderAsnwerPage(){
     let result = "";
     if(correctAnswer){
         result = "correct"
-        STORE.score++;
+        incrementScore();
     }else{
         result = "incorrect"
     }
-    const answerHTML = getAnswerPageText(result, STORE.questionNumber);
+    const answerHTML = getAnswerPageText(result, getQuestionNumber());
     $('.quiz-answer-page').html(answerHTML);
 }
 
@@ -128,7 +153,7 @@ function getQuestionText(qNum) {
                     Question ${qNum+1}/${totalQuestions}
                 </div>
                 <div class="user-score">
-                    Score ${STORE.score}/${qNum}
+                    Score ${getScore()}/${qNum}
                 </div>
             </div>
             <div class="quesiton-section">
@@ -166,7 +191,7 @@ function getQuestionText(qNum) {
 
 // This function will add the question's HTML to .quiz-question-page section
 function renderQuestionPage() {
-    const questionHTML = getQuestionText(STORE.questionNumber);
+    const questionHTML = getQuestionText(getQuestionNumber());
     $('.quiz-question-page').html(questionHTML);
 }
 

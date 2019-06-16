@@ -28,7 +28,7 @@ const STORE = {
                 "Pass if it is safe to do so",
                 "Traffic on the other side of the road can pass"
             ],
-            answer: 2,
+            answer: "2",
             answerInfo: "A broken yellow line means that it is legal for you to pass, as long as traffic is clear and it is safe for you to do so. The solid yellow line on the other side means that traffic coming the other way cannot pass.",
             img: {
                 src: "img/question-1.jpg",
@@ -43,7 +43,7 @@ const STORE = {
                 "Yes, but no more than 10 mph over",
                 "Yes, but no more than 5 mph over"
             ],
-            answer: 1,
+            answer: "1",
             answerInfo: "You are never permitted to exceed the posted speed limit, even if you are passing traffic.",
             img: {
                 src: "img/question-2.jpg",
@@ -58,7 +58,7 @@ const STORE = {
                 "Slow down and stop only if there are other cars",
                 "Proceed with caution"
             ],
-            answer: 0,
+            answer: "0",
             answerInfo: "A blinking red light acts similar to a stop sign. You must stop regardless of traffic and only proceed once you have checked that it is safe to do so.",
             img: {
                 src: "img/question-3.jpg",
@@ -73,7 +73,7 @@ const STORE = {
                 "No, unless a sign permits it",
                 "Always"
             ],
-            answer: 1,
+            answer: "1",
             answerInfo: "In 1980, the last state in the U.S. permitted right turns on red, making it legal in all 50 states and the District of Columbia, as well as Guam and Puerto Rico. The only exception is when a sign dictates otherwise.",
             img: {
                 src: "img/question-4.jpg",
@@ -88,7 +88,7 @@ const STORE = {
                 "As you turn",
                 "Minimum of 50 feet"
             ],
-            answer: 1,
+            answer: "1",
             answerInfo: "For a safe turn, you want to signal early so that other drivers are aware of your intention. You should start to signal at least 100 feet before you make the turn.",
             img: {
                 src: "img/question-5.jpg",
