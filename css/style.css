@@ -71,8 +71,13 @@ html, body{
 .instruction-title{
     margin-bottom: 10px;
 }
+.instruction-list li{
+    padding-left: 1em;
+    text-indent: -1em;
+}
 .instruction-list li::before{
-    content: '- ';
+    content: '-';
+    padding-right: 0.5em;
 }
 .instruction-list{
     margin-bottom: 20px;
