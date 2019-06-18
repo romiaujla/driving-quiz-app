@@ -113,4 +113,7 @@ const STORE = {
         4: "Ohh Great!! You almost got them all correct, Try to ace it this time, Want to try again?",
         5: "Wow!! That is a perfect score, can you do that again?"
     },
+    totalNumberOfQuestions: function(){
+        return this.questions.length;
+    }
 };

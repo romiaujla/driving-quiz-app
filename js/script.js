@@ -1,8 +1,5 @@
 'use strict';
 
-// Global Variables
-const totalNumberOfQuestions = STORE.questions.length;
-
 // returns the question number
 function getQuestionNumber(){
     return STORE.questionNumber;
@@ -10,6 +7,9 @@ function getQuestionNumber(){
 // returns the value of the score
 function getScore(){
     return STORE.score;
+}
+function getTotalNumberOfQuestions(){
+    return STORE.totalNumberOfQuestions();
 }
 // Increments the question number
 function incrementQuestionNumber(){
@@ -52,7 +52,7 @@ function getResultPageHTML(){
     return `<h2 class="result-header">Your Result</h2>
             <div class="result">
                 <p class="score">Score ${score}</p>
-                <p class="total">Out of ${totalNumberOfQuestions}</p>
+                <p class="total">Out of ${getTotalNumberOfQuestions()}</p>
             </div>
             <div class="result-caption">${STORE.resultCaptions[score]}</div>
             <button class="retry-quiz app-button">Retry Quiz</button>`;
