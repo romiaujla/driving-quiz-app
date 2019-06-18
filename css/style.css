@@ -178,12 +178,6 @@ html, body{
 .quiz-answer-page .question-image{
     margin-top: 40px;
 }
-/* .correct img{
-    box-shadow: 0px 0px 300px 3px seagreen;
-}
-.incorrect img{
-    box-shadow: 0px 0px 300px 3px crimson;
-} */
 .answer{
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -235,7 +229,8 @@ h2.incorrect{
 /* When the viewport goes more than 600px
 the question image will not increase its width 
 more than 500px, which will avoid the top of the 
-question to get stuck outside the viewport */
+question to get stuck outside the viewport, when 
+the page is viewed on landscape mode on mobiles */
 @media only screen and (min-width: 600px){
     .question-image img{
         max-width: 500px;

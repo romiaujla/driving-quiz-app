@@ -212,11 +212,13 @@ function handleStartingTheQuiz() {
 
 }
 
-function handleUserAnswerSelection(){
-    
+// This function changes the style for the selected input radio button changes the background of the label element so the user is aware of what his/her selection is 
+function handleUserAnswerSelection(){    
     $('.quiz-question-page').on("click", "label", function(event){
         if($(this).find('input[type="radio"]').is(':checked')){
+            // Remove .selected class from any previous selections
             $('.quiz-question-page label').removeClass('selected');
+            // Add the class the new selection that the user has made
             $(this).addClass('selected');
         }
     });
