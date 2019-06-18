@@ -73,6 +73,7 @@ function handleContinuationOfTheQuiz() {
         $('.quiz-answer-page').fadeOut(200);
         incrementQuestionNumber();
         let qNum = getQuestionNumber();
+        let totalNumberOfQuestions = getTotalNumberOfQuestions();
 
         // Checks if the question number is less than the total number of the questions, if yes then render the next question else render the result page with the users score
         if(qNum < totalNumberOfQuestions){
@@ -156,7 +157,7 @@ function handleSubmitAnswer() {
 function getQuestionText(qNum) {
     return `<div class="question-page-header">
                 <div class="question-num">
-                    Question ${qNum+1}/${totalNumberOfQuestions}
+                    Question ${qNum+1}/${getTotalNumberOfQuestions()}
                 </div>
                 <div class="user-score">
                     Score ${getScore()}/${qNum}
