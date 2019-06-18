@@ -127,6 +127,7 @@ html, body{
     display: flex;
     flex-direction: row;
     text-align: left;
+    align-items: center;
     padding: 10px;
     border: 1px solid salmon;
     margin-bottom: 10px;
@@ -135,7 +136,6 @@ html, body{
 .option input{
     margin-right: 10px;
 }
-
 .selected{
     background: seagreen;
     border: 1px solid seagreen;
@@ -143,6 +143,26 @@ html, body{
 }
 .submit-answer{
     margin-top: 20px;
+}
+/* Radio Button Styling */
+.option input[type="radio"]{
+    padding: 0;
+    margin: 0 10px 0px 0px;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    height: 12px;
+    flex: 0 0 12px;
+    border: 2px solid silver;
+    border-radius: 50%;
+}
+.option input[type="radio"]:checked{
+    border-color: snow;
+    background: snow;
+    transition: background .3s ease-in-out;
+}
+.option input[type="radio"]:hover{
+    border-color: snow;
 }
 
 /* Quiz Answer Page Styling */
