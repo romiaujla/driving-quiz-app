@@ -220,8 +220,8 @@ h2.incorrect{
     height: 225px;
 }
 .result p{
-    padding: 35px;
-    font-size: 2em;
+    padding: 40px;
+    font-size: 1.5em;
 }
 .score{
     border-bottom: 2px solid salmon;
@@ -229,6 +229,7 @@ h2.incorrect{
 .result-caption{
     text-transform: uppercase;
     padding: 20px;
+    font-weight: 600;
 }
 
 /* When the viewport goes more than 600px
