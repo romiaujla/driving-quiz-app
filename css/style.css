@@ -98,6 +98,7 @@ html, body{
     display: none;
 }
 .question-page-header{
+    color: salmon;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -253,6 +254,7 @@ question to get stuck outside the viewport */
     .container{
         margin: auto;
         width: 50%;
+        max-width: 700px;
     }
     .option:hover, .selected:hover{
         cursor: pointer;
