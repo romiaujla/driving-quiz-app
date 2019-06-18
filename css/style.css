@@ -31,7 +31,8 @@ li{
     font-weight: bold;
 }
 .app-button:hover{
-    background: gray;
+    background: crimson;
+    transition: background .2s ease-in;
 }
 
 /* Vertically Center Aligning the Main Container which 
