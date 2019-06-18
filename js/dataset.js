@@ -24,7 +24,7 @@ const STORE = {
             question: "When you are driving along and see a solid yellow line with a broken yellow line on your side of the highway, this means you can:",
             options: [
                 "It doesn't mean anything",
-                "Not pass unless there is an emergency",
+                "Do not pass unless there is an emergency",
                 "Pass if it is safe to do so",
                 "Traffic on the other side of the road can pass"
             ],

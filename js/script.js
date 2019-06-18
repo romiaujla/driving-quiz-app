@@ -167,7 +167,7 @@ function getQuestionText(qNum) {
                         <div class="question-image" role="question image">
                             <img src="${STORE.questions[qNum].img.src}" alt="${STORE.questions[qNum].img.alt}">
                         </div>
-                        <label for="option-a" class="option" id="a">
+                        <label for="option-a" class="option selected" id="a">
                         <input type="radio" name="answer-option" id="option-a" value="0" required>
                         <span class="option-text">${STORE.questions[qNum].options[0]}</span>
                         </label>
