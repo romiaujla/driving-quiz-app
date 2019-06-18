@@ -81,6 +81,8 @@ html, body{
 .instruction-list li{
     padding-left: 0.8em;
     text-indent: -0.8em;
+    padding-bottom: 0.5em;
+    line-height: 1.4em;
 }
 .instruction-list li::before{
     content: '-';
