@@ -1,21 +1,26 @@
 'use strict';
 
 // Global Variables
-const totalQuestions = STORE.questions.length;
+const totalNumberOfQuestions = STORE.questions.length;
 
+// returns the question number
 function getQuestionNumber(){
     return STORE.questionNumber;
 }
+// returns the value of the score
 function getScore(){
     return STORE.score;
 }
+// Increments the question number
 function incrementQuestionNumber(){
     ++STORE.questionNumber;
 }
+// Increments the score
 function incrementScore(){
     ++STORE.score;
 }
 
+// Resets the score and question number to 0
 function resetAllVariables(){
     STORE.score = 0;
     STORE.questionNumber = 0;
@@ -27,11 +32,15 @@ function handleRestartingQuiz() {
     // Event Listener for a button click on the Retry Quiz Button on the result page
     $('.quiz-result-page').on('click', '.retry-quiz', function (e) {
 
-        console.log(`Retry Quiz Button Clicked`);
-
         // Hide current page and then callback the function to reset score and questionNumber and then load the quiz-into-page.
         $('.quiz-result-page').fadeOut(200);
         resetAllVariables();
+
+        // Empty the html from all the other pages.
+        $('.quiz-question-page').html('');
+        $('.quiz-answer-page').html('');
+        $('.quiz-result-page').html('');
+
         $('.quiz-intro-page').delay(250).fadeIn(200);
 
     });
@@ -43,7 +52,7 @@ function getResultPageHTML(){
     return `<h2 class="result-header">Your Result</h2>
             <div class="result">
                 <p class="score">Score ${score}</p>
-                <p class="total">Out of ${totalQuestions}</p>
+                <p class="total">Out of ${totalNumberOfQuestions}</p>
             </div>
             <div class="result-caption">${STORE.resultCaptions[score]}</div>
             <button class="retry-quiz app-button">Retry Quiz</button>`;
@@ -60,15 +69,13 @@ function handleContinuationOfTheQuiz() {
 
     // Event Listener for the Button click on the Continue button on the Answer Page
     $('.quiz-answer-page').on('click', '.continue-button', function (e) {
-
-        console.log(`Continue button clicked`);
         
         $('.quiz-answer-page').fadeOut(200);
         incrementQuestionNumber();
         let qNum = getQuestionNumber();
 
         // Checks if the question number is less than the total number of the questions, if yes then render the next question else render the result page with the users score
-        if(qNum < totalQuestions){
+        if(qNum < totalNumberOfQuestions){
             renderQuestionPage();
             $('.quiz-question-page').delay(250).fadeIn(200);
         }else{
@@ -103,7 +110,6 @@ function checkAnswer(){
     let qNum = getQuestionNumber();
     const correctAnswer = STORE.questions[qNum].answer;
 
-    console.log(`${typeof userAnswer}  ${typeof correctAnswer}`);
     if(userAnswer === correctAnswer){
         console.log("condition met");
         return true;
@@ -150,7 +156,7 @@ function handleSubmitAnswer() {
 function getQuestionText(qNum) {
     return `<div class="question-page-header">
                 <div class="question-num">
-                    Question ${qNum+1}/${totalQuestions}
+                    Question ${qNum+1}/${totalNumberOfQuestions}
                 </div>
                 <div class="user-score">
                     Score ${getScore()}/${qNum}
