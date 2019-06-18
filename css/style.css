@@ -65,19 +65,24 @@ html, body{
     text-transform: uppercase;
 }
 
+.instruction-title{
+    text-transform: uppercase;
+}
+
 .instructions{
     text-align: left;
+    font-size: 0.8em;
 }
 .instruction-title{
     margin-bottom: 10px;
 }
 .instruction-list li{
-    padding-left: 1em;
-    text-indent: -1em;
+    padding-left: 0.8em;
+    text-indent: -0.8em;
 }
 .instruction-list li::before{
     content: '-';
-    padding-right: 0.5em;
+    padding-right: 0.4em;
 }
 .instruction-list{
     margin-bottom: 20px;
