@@ -20,8 +20,10 @@ li{
 }
 
 .app-button{
-    border: 1px solid salmon;
-    background: silver;
+    background: salmon;
+    border: none;
+    color: white;
+    box-shadow: 3px 3px 3px silver;
     padding: 10px;
     font-size: 0.8em;
     cursor: pointer;
@@ -53,7 +55,7 @@ html, body{
 .quiz-question-page, 
 .quiz-answer-page,
 .quiz-result-page{
-    border: 2px solid salmon;
+    /* border: 2px solid salmon; */
     padding: 20px;
 }
 
