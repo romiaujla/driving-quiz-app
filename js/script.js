@@ -167,7 +167,7 @@ function getQuestionText(qNum) {
                         <div class="question-image" role="question image">
                             <img src="${STORE.questions[qNum].img.src}" alt="${STORE.questions[qNum].img.alt}">
                         </div>
-                        <label for="option-a" class="option selected" id="a">
+                        <label for="option-a" class="option" id="a">
                         <input type="radio" name="answer-option" id="option-a" value="0" required>
                         <span class="option-text">${STORE.questions[qNum].options[0]}</span>
                         </label>
@@ -212,9 +212,20 @@ function handleStartingTheQuiz() {
 
 }
 
+function handleUserAnswerSelection(){
+    
+    $('.quiz-question-page').on("click", "label", function(event){
+        if($(this).find('input[type="radio"]').is(':checked')){
+            $('.quiz-question-page label').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    });
+}
+
 // The handleQuizApp will call the funnctions for handling the user clicks and all the Quiz app realted functionality will be called here, this is also the main callback function when the page loads. 
 function handleQuizApp() {
     handleStartingTheQuiz();
+    handleUserAnswerSelection();
     handleSubmitAnswer();
     handleContinuationOfTheQuiz();
     handleRestartingQuiz();

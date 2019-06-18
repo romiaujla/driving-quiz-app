@@ -135,12 +135,7 @@ html, body{
 .option input{
     margin-right: 10px;
 }
-.option:hover{
-    cursor: pointer;
-    background: salmon;
-    border: 1px solid salmon;
-    color: white;
-}
+
 .selected{
     background: seagreen;
     border: 1px solid seagreen;
@@ -217,5 +212,11 @@ question to get stuck outside the viewport */
     .container{
         margin: auto;
         width: 50%;
+    }
+    .option:hover, .selected:hover{
+        cursor: pointer;
+        background: salmon;
+        border: 1px solid salmon;
+        color: white;
     }
 }
