@@ -23,6 +23,7 @@
 //     resultCaption: {
 //         "key = overallscore" : "the result caption to be displayed based on user's overall score"
 //      }
+//     totalNumberOfQuestions: funciton(){ return the number of question in the questions array}
 // ]
 
 const STORE = {
