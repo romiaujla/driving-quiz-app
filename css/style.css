@@ -1,6 +1,7 @@
 /* Global Styles */
 *{
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body, p, h1, h2, h3, h4, h5, h6, 
@@ -8,6 +9,10 @@ a, div, section, ul, li, label, input, fieldset,
 form,legend{
     margin: 0;
     padding: 0;
+}
+
+body{
+    background: snow;
 }
 
 li{
