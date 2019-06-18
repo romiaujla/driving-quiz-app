@@ -163,7 +163,18 @@ question to get stuck outside the viewport */
     }
 }
 
-/* Tablets and Other Large Screens */
+/* Tablets */
 @media only screen and (min-width: 768px){
-    
+    .container{
+        margin: auto;
+        width: 80%;
+    }
+}
+
+/* Larger Screens */
+@media only screen and (min-width: 1024px){
+    .container{
+        margin: auto;
+        width: 50%;
+    }
 }
