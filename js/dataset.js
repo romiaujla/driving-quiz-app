@@ -7,15 +7,22 @@
 //         options: string[], 
 //          (Will hold 4 options for each question, out of which only one will be correct answer)
 // 
-//         answer: number, 
-//          (Will hold the index of the answer in the options string[] array)
+//         answer: string, 
+//          (Will hold the index of the answer in the options string[] array, it is a string beacuse the value returned by the radio button ends up being of type string)
 // 
 //         answerInfo: string 
 //          (Additional info of the answer that will be displayed after user submits each answer, when incorrect submission this will help user understand the correct answer),
 // 
-//         imgSrc: string 
-//          (Will hold the value for the url link to an image to be displayed while the question is asked)
-//     }
+//         imgSrc: object{
+//              src: string (Holds the source of the image)
+//              alt: string (Holds the alt text of the image)
+//          }
+//     },
+//     score: number (holds the score of the user)
+//     questionNum: number (holds the active question number the use is on)
+//     resultCaption: {
+//         "key = overallscore" : "the result caption to be displayed based on user's overall score"
+//      }
 // ]
 
 const STORE = {
